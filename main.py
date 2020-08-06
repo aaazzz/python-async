@@ -5,7 +5,7 @@ import requests
 import json
 
 def calc_time(fn):
-    """関数の実行時間を計測するデコレータ"""
+    """decorator that measures the execution time of a function"""
     def wrapper(*args, **kwargs):
         start = time.time()
         fn(*args, **kwargs)
