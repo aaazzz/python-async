@@ -5,7 +5,7 @@ import requests
 import json
 
 def calc_time(fn):
-    """decorator that measures the execution time of a function"""
+    # decorator that measures the execution time of a function
     def wrapper(*args, **kwargs):
         start = time.time()
         fn(*args, **kwargs)
@@ -26,8 +26,8 @@ async def get_request (url):
 
 @calc_time
 def main_async():
-    # Schedule the first call to get_joke()
     loop = asyncio.get_event_loop()
+    # set 40 times api call
     tasks = asyncio.gather(
             get_request('https://icanhazdadjoke.com/'),
             get_request('https://icanhazdadjoke.com/'),
